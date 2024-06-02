@@ -259,7 +259,7 @@ namespace ECommerceApp.Tests
             _product.DecreaseStock(value);
 
             // Assert
-            Assert.That(_product.Stock, Is.EqualTo(30)); // Initial Stock value = 30 (Value should not change - cannot got below 0)
+            Assert.That(_product.Stock, Is.EqualTo(30)); // Initial Stock value = 30 (Value should not change - cannot got below 0 )
         }
     }
 }
