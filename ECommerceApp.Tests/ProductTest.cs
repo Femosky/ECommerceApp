@@ -179,5 +179,47 @@ namespace ECommerceApp.Tests
             // Assert
             Assert.That(_product.Stock, Is.EqualTo(1000));
         }
+
+        // TESTS FOR METHODS
+
+        // Test for IncreaseStock method
+        [Test]
+        public void Test_IncreaseStock_ValidValue()
+        {
+            // Assign
+            var value = 5;
+
+            // Act
+            _product.IncreaseStock(value);
+
+            // Assert
+            Assert.That(_product.Stock, Is.EqualTo(35)); // Initial Stock value = 30
+        }
+
+        [Test]
+        public void Test_IncreaseStock_NegativeValue()
+        {
+            // Assign
+            var value = -5;
+
+            // Act
+            _product.IncreaseStock(value);
+
+            // Assert
+            Assert.That(_product.Stock, Is.EqualTo(30)); // Initial Stock value = 30 (Value should not change - cannot got below 0)
+        }
+
+        [Test]
+        public void Test_IncreaseStock_LimitValue()
+        {
+            // Assign
+            var value = 970;
+
+            // Act
+            _product.IncreaseStock(value);
+
+            // Assert
+            Assert.That(_product.Stock, Is.EqualTo(1000)); // Initial Stock value = 30
+        }
     }
 }
