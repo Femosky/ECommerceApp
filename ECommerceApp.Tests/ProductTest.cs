@@ -99,5 +99,85 @@ namespace ECommerceApp.Tests
             // Assert
             Assert.That(_product.ProductName, Is.EqualTo(""));
         }
+
+        // Test for Price
+        [Test]
+        public void Test_Price_ValidInitialValue()
+        {
+            // Assign
+            var value = _product.Price;
+
+            // Act
+            _product.Price = value;
+
+            // Assert
+            Assert.That(_product.Price, Is.EqualTo(100.34));
+        }
+
+        [Test]
+        public void Test_Price_MinValue()
+        {
+            // Assign
+            var value = 1.00;
+
+            // Act
+            _product.Price = value;
+
+            // Assert
+            Assert.That(_product.Price, Is.EqualTo(1.00));
+        }
+
+        [Test]
+        public void Test_Price_MaxValue()
+        {
+            // Assign
+            var value = 5000.00;
+
+            // Act
+            _product.Price = value;
+
+            // Assert
+            Assert.That(_product.Price, Is.EqualTo(5000.00));
+        }
+
+        // Test for Stock
+        [Test]
+        public void Test_Stock_ValidInitialValue()
+        {
+            // Assign
+            var value = _product.Stock;
+
+            // Act
+            _product.Stock = value;
+
+            // Assert
+            Assert.That(_product.Stock, Is.EqualTo(30));
+        }
+
+        [Test]
+        public void Test_Stock_MinValue()
+        {
+            // Assign
+            var value = 1;
+
+            // Act
+            _product.Stock = value;
+
+            // Assert
+            Assert.That(_product.Stock, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Test_Stock_MaxValue()
+        {
+            // Assign
+            var value = 1000;
+
+            // Act
+            _product.Stock = value;
+
+            // Assert
+            Assert.That(_product.Stock, Is.EqualTo(1000));
+        }
     }
 }
